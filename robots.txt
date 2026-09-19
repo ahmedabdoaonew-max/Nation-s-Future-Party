@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nation-s-future-party.vercel.app/sitemap.xml

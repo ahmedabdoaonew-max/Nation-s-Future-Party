@@ -386,6 +386,7 @@
   }
   .video-wrap video,.video-wrap iframe{
     position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;
+    object-fit:contain; /* الفيديو يظهر كامل بدون قص */
   }
   .video-missing{
     position:absolute;inset:0;
@@ -410,6 +411,27 @@
   }
   .wa-btn:hover{background:var(--wa-dark);transform:translateY(-2px)}
   .wa-btn svg{width:26px;height:26px;fill:#fff}
+
+  /* ============ بانر الاشتراكات ============ */
+  .sub-banner{max-width:1000px;margin:0 auto;padding:44px 16px}
+  .sub-banner-inner{
+    position:relative;overflow:hidden;text-align:center;color:#fff;
+    background:linear-gradient(135deg,var(--blue),var(--sky));
+    border-radius:22px;padding:clamp(24px,5vw,44px) 20px;
+    box-shadow:0 10px 28px rgba(31,127,184,.28);
+  }
+  .sub-banner-inner::before{
+    content:"";position:absolute;top:0;right:0;left:0;height:8px;background:rgba(255,255,255,.55);
+  }
+  .sub-banner h2{font-family:'Reem Kufi','Cairo',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.3}
+  .sub-banner p{margin:6px 0 20px;font-size:clamp(.95rem,2.6vw,1.15rem);opacity:.95}
+  .sub-btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    background:var(--white);color:var(--deep);font-weight:800;font-size:1.1rem;
+    padding:12px 32px;border-radius:50px;box-shadow:0 6px 16px rgba(18,64,95,.25);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .sub-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(18,64,95,.3)}
 
   /* ============ التذييل ============ */
   footer{
@@ -480,6 +502,17 @@
   </div>
   <div class="grid" id="grid"></div>
 </main>
+
+<div class="divider"></div>
+
+<!-- بانر الاشتراكات -->
+<section class="sub-banner" aria-label="الاشتراكات">
+  <div class="sub-banner-inner">
+    <h2>الاشتراكات</h2>
+    <p>المسابقات والبرامج التدريبية وملتقى التوظيف — احجز مكانك الآن</p>
+    <a class="sub-btn" href="subscriptions.html">ادخل صفحة الاشتراكات ←</a>
+  </div>
+</section>
 
 <div class="divider"></div>
 
@@ -708,11 +741,10 @@ function buildVideo(s){
   const wrap = document.getElementById("videoWrap");
   wrap.innerHTML = "";
   wrap.style.display = "";
-  if (!s.video){ wrap.style.display = "none"; return; }
-
   const missing = () => {
-    wrap.innerHTML = '<div class="video-missing">الفيديو غير متاح حاليًا</div>';
+    wrap.innerHTML = '<div class="video-missing">🎬 الفيديو غير متاح حاليًا</div>';
   };
+  if (!s.video){ missing(); return; }
 
   const yt = youtubeEmbed(s.video);
   if (yt){

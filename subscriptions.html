@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الاشتراكات | دائرة رمل أول - حزب مستقبل وطن</title>
+<meta name="description" content="الاشتراك في المسابقات الرياضية والفنية والدينية والعلمية، والبرامج التدريبية والثقافية والعلمية، وملتقى التوظيف وبنك الـ CV - أمانة دائرة رمل أول، حزب مستقبل وطن. احجز مباشرة عبر واتساب.">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#ffffff; --sky:#8fd0f0; --sky-soft:#dff1fb; --lubni:#eef8fb;
+    --blue:#1f7fb8; --deep:#12405f; --muted:#4f6b80; --wa:#25d366; --wa-dark:#1da851;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Cairo','Segoe UI',Tahoma,sans-serif;background:var(--lubni);color:var(--deep);line-height:1.7}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:4px solid var(--sky);box-shadow:0 4px 16px rgba(31,127,184,.15)}
+  .topbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px}
+  .flag-circle,.party-logo{width:58px;height:58px;border-radius:50%;flex:0 0 auto;overflow:hidden;border:3px solid var(--sky);background:var(--white);box-shadow:0 2px 8px rgba(31,127,184,.25)}
+  .flag-circle img,.party-logo img{width:100%;height:100%;object-fit:cover}
+  .flag-circle svg{width:100%;height:100%;display:block}
+  .brand-name{font-family:'Reem Kufi','Cairo',sans-serif;font-weight:700;font-size:clamp(1.35rem,4.2vw,2.3rem);color:var(--deep);letter-spacing:.5px;white-space:nowrap}
+
+  .page{max-width:760px;margin:0 auto;padding:28px 16px 56px}
+  .back{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;
+    background:var(--white);border:2px solid var(--sky-soft);border-radius:50px;padding:6px 18px;
+    box-shadow:0 4px 14px rgba(31,127,184,.08);transition:border-color .2s,transform .2s;
+  }
+  .back:hover{border-color:var(--sky);transform:translateY(-2px)}
+  .section-head{text-align:center;margin:22px 0 28px}
+  .section-head h2{font-family:'Reem Kufi','Cairo',sans-serif;font-size:clamp(1.7rem,4.5vw,2.4rem);color:var(--deep)}
+  .section-head p{color:var(--muted)}
+  .section-head::after{content:"";display:block;width:90px;height:5px;margin:14px auto 0;border-radius:3px;background:linear-gradient(to left,var(--sky),var(--blue))}
+
+  .cards{display:flex;flex-direction:column;gap:26px}
+  .card{background:var(--white);border:2px solid var(--sky-soft);border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(31,127,184,.12)}
+  .card-title{
+    font-family:'Reem Kufi','Cairo',sans-serif;font-size:clamp(1.1rem,3.6vw,1.5rem);
+    text-align:center;padding:14px 16px;color:var(--deep);
+    background:linear-gradient(to left,var(--sky-soft),var(--white));
+    border-top:6px solid var(--sky);
+  }
+  .slider{position:relative;width:100%;aspect-ratio:16/8;background:var(--sky-soft);overflow:hidden}
+  .slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+  .slider img.active{opacity:1}
+  .dots{position:absolute;bottom:10px;right:0;left:0;display:flex;justify-content:center;gap:8px;z-index:2}
+  .dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.7);transition:background .3s,transform .3s}
+  .dots span.active{background:var(--blue);transform:scale(1.25)}
+
+  .video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:var(--deep)}
+  .video-wrap video,.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;object-fit:contain}
+  .video-missing{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--sky-soft);color:var(--muted);font-weight:600;text-align:center;padding:16px}
+
+  .card-foot{padding:20px;text-align:center;background:var(--lubni)}
+  .wa-btn{
+    display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;
+    font-weight:700;font-size:1.1rem;padding:12px 30px;border-radius:50px;
+    box-shadow:0 6px 16px rgba(37,211,102,.4);transition:background .2s,transform .2s;
+  }
+  .wa-btn:hover{background:var(--wa-dark);transform:translateY(-2px)}
+  .wa-btn svg{width:26px;height:26px;fill:#fff}
+
+  footer{background:var(--sky-soft);color:var(--deep);text-align:center;padding:22px 16px;font-size:.95rem;border-top:4px solid var(--sky)}
+  @media (max-width:520px){
+    .flag-circle,.party-logo{width:44px;height:44px;border-width:2px}
+    .topbar-inner{gap:8px;padding:8px 10px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="flag-circle">
+      <svg viewBox="0 0 120 120" role="img" aria-label="علم جمهورية مصر العربية" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="40" fill="#ce1126"/>
+        <rect y="40" width="120" height="40" fill="#ffffff"/>
+        <rect y="80" width="120" height="40" fill="#000000"/>
+        <g fill="#c8a24a" stroke="#a9832b" stroke-width=".6" stroke-linejoin="round">
+          <!-- الجناح الأيسر -->
+          <path id="wing" d="M55 52 L47 47 L39 49 L43 52 L36 55 L42 58 L37 62 L44 63 L41 67 L54 64 Z"/>
+          <!-- الجناح الأيمن -->
+          <path d="M65 52 L73 47 L81 49 L77 52 L84 55 L78 58 L83 62 L76 63 L79 67 L66 64 Z"/>
+          <!-- الذيل -->
+          <path d="M55 64 L65 64 L67 73 L60 71 L53 73 Z"/>
+          <!-- الرأس والمنقار -->
+          <circle cx="60" cy="47" r="3.6"/>
+          <path d="M57 46 L52 48.500 L57 50 Z"/>
+          <!-- القاعدة -->
+          <rect x="49" y="74" width="22" height="4.500" rx="2.200"/>
+        </g>
+        <!-- الدرع -->
+        <path d="M54.500 51 H65.500 V62 Q65.500 66.500 60 68.500 Q54.500 66.500 54.500 62 Z" fill="#fff" stroke="#a9832b" stroke-width=".8"/>
+        <path d="M55.200 52 H64.800 V56 H55.200 Z" fill="#ce1126"/>
+        <path d="M55.200 60.500 H64.800 V62 Q64.800 65.200 60 67.300 Q55.200 65.200 55.200 62 Z" fill="#000"/>
+      </svg>
+    </div>
+    <h1 class="brand-name">دائرة رمل أول</h1>
+    <div class="party-logo">
+      <img id="logoImg" src="logo.jpg" alt="شعار حزب مستقبل وطن">
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <a class="back" href="index.html">→ العودة للصفحة الرئيسية</a>
+  <div class="section-head">
+    <h2>الاشتراكات</h2>
+    <p>اختر ما يناسبك واحجز مباشرة عبر واتساب</p>
+  </div>
+  <div class="cards" id="cards"></div>
+</main>
+
+<footer>© حزب مستقبل وطن — جميع الحقوق محفوظة</footer>
+
+<script src="subscriptions.js"></script>
+<script>
+const SLIDE_INTERVAL = 2000; // ثانيتان
+const WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
+
+function svgUri(svg){ return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg); }
+function placeholderBanner(title, n){
+  const palettes = [["#2f8fc8","#8fd0f0"],["#1f7fb8","#5bb4e5"]];
+  const [c1,c2] = palettes[(n-1) % 2];
+  const size = Math.max(30, Math.min(72, Math.floor(1000 / Math.max(title.length, 1) * 1.7)));
+  return svgUri(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+    <defs><linearGradient id="g" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs>
+    <rect width="1200" height="600" fill="url(#g)"/>
+    <rect y="560" width="1200" height="40" fill="#ffffff" fill-opacity=".85"/>
+    <text x="600" y="290" text-anchor="middle" font-family="Cairo,Tahoma,sans-serif" font-size="${size}" font-weight="700" fill="#ffffff">${title}</text>
+    <text x="600" y="370" text-anchor="middle" font-family="Cairo,Tahoma,sans-serif" font-size="36" fill="#12405f">حزب مستقبل وطن</text>
+  </svg>`);
+}
+
+function youtubeEmbed(url){
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/))([\w-]{11})/);
+  return m ? "https://www.youtube.com/embed/" + m[1] + "?rel=0" : null;
+}
+
+function buildVideo(wrap, item){
+  const missing = () => { wrap.innerHTML = '<div class="video-missing">🎬 الفيديو غير متاح حاليًا</div>'; };
+  if (!item.video){ missing(); return; }
+  const yt = youtubeEmbed(item.video);
+  if (yt){
+    const f = document.createElement("iframe");
+    f.src = yt; f.title = item.title;
+    f.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+    f.allowFullscreen = true; f.loading = "lazy";
+    wrap.appendChild(f);
+  } else {
+    const v = document.createElement("video");
+    v.controls = true; v.playsInline = true; v.preload = "metadata"; v.src = item.video;
+    v.addEventListener("error", missing, {once:true});
+    wrap.appendChild(v);
+  }
+}
+
+const cardsEl = document.getElementById("cards");
+const sliders = [];
+
+SUBSCRIPTIONS.forEach(item => {
+  const card = document.createElement("article");
+  card.className = "card";
+
+  const h = document.createElement("h3");
+  h.className = "card-title";
+  h.textContent = item.title;
+  card.appendChild(h);
+
+  // الصورتان
+  const slider = document.createElement("div");
+  slider.className = "slider";
+  const pics = (item.images || []).filter(Boolean);
+  const list = pics.length ? pics : ["", ""];
+  list.forEach((src, n) => {
+    const img = document.createElement("img");
+    img.alt = item.title;
+    img.src = src || placeholderBanner(item.title, n + 1);
+    img.addEventListener("error", () => { img.src = placeholderBanner(item.title, n + 1); }, {once:true});
+    if (n === 0) img.classList.add("active");
+    slider.appendChild(img);
+  });
+  const dots = document.createElement("div");
+  dots.className = "dots";
+  dots.innerHTML = list.map((_, n) => `<span class="${n===0?"active":""}"></span>`).join("");
+  slider.appendChild(dots);
+  card.appendChild(slider);
+  sliders.push({ el: slider, current: 0 });
+
+  // الفيديو
+  const vw = document.createElement("div");
+  vw.className = "video-wrap";
+  buildVideo(vw, item);
+  card.appendChild(vw);
+
+  // زر حجز واتساب
+  const foot = document.createElement("div");
+  foot.className = "card-foot";
+  const a = document.createElement("a");
+  a.className = "wa-btn";
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.href = "https://wa.me/" + SUB_PHONE + "?text=" + encodeURIComponent(SUB_MESSAGE + " - " + item.title);
+  a.innerHTML = WA_ICON + "احجز عبر واتساب";
+  foot.appendChild(a);
+  card.appendChild(foot);
+
+  cardsEl.appendChild(card);
+});
+
+setInterval(() => {
+  sliders.forEach(sl => {
+    const imgs = sl.el.querySelectorAll("img");
+    const dots = sl.el.querySelectorAll(".dots span");
+    if (imgs.length < 2) return;
+    imgs[sl.current].classList.remove("active");
+    dots[sl.current].classList.remove("active");
+    sl.current = (sl.current + 1) % imgs.length;
+    imgs[sl.current].classList.add("active");
+    dots[sl.current].classList.add("active");
+  });
+}, SLIDE_INTERVAL);
+</script>
+</body>
+</html>
